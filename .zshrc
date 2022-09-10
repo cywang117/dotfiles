@@ -78,13 +78,6 @@ antigen apply
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nano'
-else
-  export EDITOR='code'
-fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -99,6 +92,14 @@ autoload -U promptinit; promptinit
 prompt pure
 
 zstyle :prompt:pure:git:stash show yes
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nano'
+  neofetch
+else
+  export EDITOR='code'
+fi
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
