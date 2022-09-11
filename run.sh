@@ -69,6 +69,7 @@ declare -a dev_packages=(
 declare -a server_packages=(
     openssh-server
     neofetch
+    net-tools
 )
 
 print g "Installing packages..."
