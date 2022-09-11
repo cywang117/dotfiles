@@ -101,7 +101,11 @@ else
   export EDITOR='code'
 fi
 
+# Include local configs
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Start up ssh-agent so keys can be added as they are used
+[[ -z "$SSH_AUTH_SOCK" ]] && eval "$(ssh-agent -s)"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
