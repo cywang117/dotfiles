@@ -65,11 +65,15 @@ COMPLETION_WAITING_DOTS="true"
 
 # User configuration
 
+zstyle :omz:plugins:ssh-agent quiet yes
+zstyle :omz:plugins:ssh-agent lazy yes
+
 # Load antigen
 source ~/.zsh/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle git
+antigen bundle ssh-agent
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
@@ -103,9 +107,6 @@ fi
 
 # Include local configs
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
-# Start up ssh-agent so keys can be added as they are used
-[[ -z "$SSH_AUTH_SOCK" ]] && eval "$(ssh-agent -s)"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
