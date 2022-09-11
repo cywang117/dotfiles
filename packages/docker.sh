@@ -12,5 +12,5 @@ sudo apt-get install \
     docker-ce-cli \
     containerd.io \
     docker-compose-plugin
-[ $(getent group somegroupname) ] || sudo groupadd somegroupname
+[ $(getent group docker) ] || sudo groupadd docker
 sudo usermod -aG docker $USER
