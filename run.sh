@@ -67,9 +67,10 @@ declare -a dev_packages=(
 
 # Server only packages
 declare -a server_packages=(
+    net-tools
     openssh-server
     neofetch
-    net-tools
+    fail2ban
 )
 
 print g "Installing packages..."
