@@ -84,4 +84,8 @@ for dotfile in $CWD/.[^.]*; do
     [[ -f $dotfile ]] && cp $dotfile $HOME
 done
 
-
+# Copy local scripts
+print g "Copying local scripts..."
+for script in $CWD/bin/*; do
+    cp $script ~/.local/bin
+done
