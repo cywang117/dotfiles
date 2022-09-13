@@ -87,6 +87,7 @@ done
 
 # Copy local scripts
 print g "Copying local scripts..."
+mkdir -p ~/.local/bin || true
 for script in $CWD/bin/*; do
     cp $script ~/.local/bin
 done
