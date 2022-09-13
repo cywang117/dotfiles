@@ -89,6 +89,3 @@ print g "Copying local scripts..."
 for script in $CWD/bin/*; do
     cp $script ~/.local/bin
 done
-
-# Copy other configs
-mkdir ~/.ssh && cp $CWD/config/.sshconfig ~/.ssh/config
