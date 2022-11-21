@@ -13,8 +13,11 @@ alias gb='git --no-pager branch'
 alias upd='sudo apt-get update'
 alias upg='sudo apt-get upgrade'
 alias ins='sudo apt-get install'
-alias docker-compose='docker compose'
 alias dc='docker compose'
+alias dcrmp='docker rm $(docker ps -a -q)'
+alias dcrmi='docker rmi -f $(docker images --filter "dangling=true" -q)'
+alias dcrmv='docker volume rm $(docker volume ls -f "dangling=true" -q)'
+alias dcrm='dcrmp;dcrmi;dcrmv'
 
 alias -s json=code
 alias -s txt=nano
